@@ -1,17 +1,15 @@
 import React, {Component} from "react";
 
 
-class TodoForm extends Component{
+class TodoForm extends Component {
     constructor(props) {
         super(props);
-
     }
 
     //define form submit
     submitTodo = (e) => {
         e.preventDefault();
-        console.log("todoValue: ", this.props.todoValue);
-        this.props.addTodo(e, this.props.todoValue);
+        this.props.addTodo(e);
     }
 
     render() {
@@ -28,7 +26,7 @@ class TodoForm extends Component{
                         />
                     </label>
                     <button>Add Todo</button>
-                    <button>Clear Completed</button>
+                    <button onClick={this.props.clearCompleted}>Clear Completed</button>
                 </form>
             </div>
         );
